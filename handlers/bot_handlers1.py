@@ -15,6 +15,7 @@ async def start(ms: types.Message):
 
 @dp.message_handler(commands=["tictactoe"])
 async def tictactoe(ms: types.Message):
+    gl.clear()
     await ms.answer("Choose",
                     reply_markup=choose_keyboard())
 
@@ -53,6 +54,11 @@ async def start(ms: types.Message):
     await ms.answer(gl.format(),
               reply_markup=keyboard1())
 
+
+@dp.message_handler(commands=['restart'])
+async def restart(ms: types.Message):
+    gl.clear()
+    await ms.answer("You can play again!!! /tictactoe")
 
 
 @dp.message_handler()

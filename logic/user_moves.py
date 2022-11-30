@@ -2,6 +2,10 @@ from aiogram.types import ReplyKeyboardRemove
 from aiogram import types
 import logic.geniral_g as g
 
+cnt = 0
+cnt2 = ""
+all_ns = " 012345678"
+
 
 
 
@@ -41,7 +45,7 @@ async def arrange(ms: types.Message):
                 pass
 
         else:
-            await ms.answer("Oh no no no....")
+            await ms.answer("THIS NUMBER USED")
 
 
 

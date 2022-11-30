@@ -8,7 +8,7 @@ from aiogram.utils.exceptions import MessageTextIsEmpty
 
 cnt = 0
 cnt2 = ""
-all_ns = "012345678"
+all_ns = " 012345678"
 
 
 
@@ -55,7 +55,12 @@ async def from_bot(ms: types.Message):
     g.ground[random_num] = "O"
     cnt2 += ms.text
     cnt += 1
-    return await ms.answer(g.format())
+    await ms.answer(g.format())
+    if g.check_check() == None:
+        return await ms.answer(g.check_check())
+    else:
+        return await ms.answer(g.check_check(),
+                               reply_markup=ReplyKeyboardRemove())
 
 
 
